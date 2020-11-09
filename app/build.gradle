@@ -1,15 +1,17 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'kotlin-android-extensions'
 }
 
 android {
-    compileSdkVersion 29
+    compileSdkVersion 30
+    buildToolsVersion "30.0.2"
 
     defaultConfig {
         applicationId "br.com.bspicinini.monitortreinamento"
-        minSdkVersion 16
-        targetSdkVersion 29
+        minSdkVersion 19
+        targetSdkVersion 30
         versionCode 1
         versionName "1.0"
 
@@ -44,4 +46,6 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
     implementation 'org.osmdroid:osmdroid-android:6.1.8'
+    implementation 'org.osmdroid:osmdroid-mapsforge:6.1.8'
+    implementation 'org.osmdroid:osmdroid-geopackage:6.1.8'
 }

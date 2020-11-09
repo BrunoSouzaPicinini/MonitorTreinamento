@@ -1,5 +1,6 @@
 package br.com.bspicinini.monitortreinamento
 
+import android.content.Intent
 import android.os.Bundle
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
@@ -14,10 +15,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         setSupportActionBar(findViewById(R.id.toolbar))
 
-        findViewById<FloatingActionButton>(R.id.fab).setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show()
-        }
+        findViewById<FloatingActionButton>(R.id.fab).setOnClickListener { chamarConfirmacaoDeInicio() }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -34,5 +32,11 @@ class MainActivity : AppCompatActivity() {
             R.id.action_settings -> true
             else -> super.onOptionsItemSelected(item)
         }
+    }
+
+    fun chamarConfirmacaoDeInicio(){
+
+        val intent = Intent(this, ConfirmacaoInicioMonitoramento::class.java).apply{};
+        startActivity(intent)
     }
 }
